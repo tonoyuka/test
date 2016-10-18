@@ -2,7 +2,13 @@
 
 ### リリース準備
 
-- [ ] `kubetool info` ：kubectlの向き先が本番環境に向いているか確認
+- [ ] kubectlの向き先が本番環境に向いているか確認
+        ```
+        $ kubetool info
+        context -> gke_formidable-byte-89507_asia-east1-a_abema-prd
+        client version : v1.2.5
+        server version : v1.3.7
+        ```
 - [ ] `kubetool pod --rc=abema-gateway` ：現状の動いている image の version を確認
 - [ ] RC の更新はあるか (ない場合はチェックしないで下さい)
     - [ ] (RC 更新がある場合のみ) RCを apply したか

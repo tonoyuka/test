@@ -18,13 +18,13 @@
 - [ ] RC の image の version が新しい tag に更新されているか確認 ( `kubectl get rc abema-gateway -o=yaml` )
 - [ ] [admin, admin-gateway以外] podを1つだけ更新 ( `kubetool reload --1 abema-gateway` )
 - [ ] [admin, admin-gateway以外] 更新したpodのログを確認 ( `kubectl logs <pod-name>` )
-- [ ] `kubetool fix-version abema-gateway --interval=15` ... 全てのpodのバージョンを新しいタグに合わせる (admin, admin-gatewayはなし)
-- [ ] `kubetool pod --rc==abema-gateway` ... Pod の状態は全て running になっているか、restart がかかっていないか確認
-- [ ] `kubetool pod --rc==abema-gateway` ... 稼働中の pod のイメージを確認
+- [ ] [admin, admin-gateway以外] 全てのpodのバージョンを新しいタグに合わせる ( `kubetool fix-version abema-gateway --interval=15` )
+- [ ] Pod の状態は全て running になっているか、restart がかかっていないか確認 ( `kubetool pod --rc==abema-gateway` )
+- [ ] 稼働中の pod のイメージを確認 ( `kubetool pod --rc==abema-gateway` )
 
 ### 最終確認
 
-- [ ] Cloud logging もしくは kubectl logs にて、エラーログが出力されていないか確認
+- [ ] Cloud logging もしくは `kubectl logs` にて、エラーログが出力されていないか確認
 - [ ] リリースしたサービスは正常に動いているか確認
 - [ ] `abema-ops` の 該当の RC の yml を更新して、PR を出す
 - [ ]  お疲れ様でした

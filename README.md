@@ -3,7 +3,7 @@
 ### リリース準備
 
 - [ ] kubectlの向き先が本番環境に向いているか確認 ( `kubetool info` )
-- [ ] 現状の動いている image の version を確認 ... `kubetool pod --rc=abema-gateway`
+- [ ] 現状の動いている image の version を確認 ( `kubetool pod --rc=abema-gateway` )
 - [ ] RC の更新はあるか (ない場合はチェックしないで下さい)
     - [ ] (RC 更新がある場合のみ) RCを apply
     - [ ] (RC 更新がある場合のみ) RCを edit して項目が反映されていることを確認
@@ -15,9 +15,9 @@
 
 - [ ] Githubの対象リポジトリのタグを Push する
 - [ ] CircleCI の Job は正常に完了したか確認
-- [ ] `kubectl get rc abema-gateway -o=yaml` ... RC の image の version が新しい tag に更新されているか確認
-- [ ] `kubetool reload --1 abema-gateway` ... podを1つだけ更新 (admin, admin-gatewayはなし)
-- [ ] `kubectl logs <pod-name>` ... 更新したpodのログを確認 (admin, admin-gatewayはなし)
+- [ ] RC の image の version が新しい tag に更新されているか確認 ( `kubectl get rc abema-gateway -o=yaml` )
+- [ ] [admin, admin-gateway以外] podを1つだけ更新 ( `kubetool reload --1 abema-gateway` )
+- [ ] [admin, admin-gateway以外] 更新したpodのログを確認 ( `kubectl logs <pod-name>` )
 - [ ] `kubetool fix-version abema-gateway --interval=15` ... 全てのpodのバージョンを新しいタグに合わせる (admin, admin-gatewayはなし)
 - [ ] `kubetool pod --rc==abema-gateway` ... Pod の状態は全て running になっているか、restart がかかっていないか確認
 - [ ] `kubetool pod --rc==abema-gateway` ... 稼働中の pod のイメージを確認
